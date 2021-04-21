@@ -1,0 +1,19 @@
+@startuml QMP 1ra Iteración
+
+class Prenda {
+  tipoPrenda
+  colorPrincipal
+  colorSecundario
+  material
+}
+
+
+
+Prenda -> TipoPrenda
+class TipoPrenda{
+  categoria
+}
+
+
+
+@enduml
