@@ -2,7 +2,7 @@
 
 ## Diagrama de Clases
 
-![image]("QMP 1ra Iteración.png")
+![image](diagramaDeClases.png)
 
 ## Prenda
 
