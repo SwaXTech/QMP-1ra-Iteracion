@@ -18,6 +18,8 @@ enum Material{
   ALGODON
   JEAN
   CUERO
+  PIQUÉ
+  ACETATO
 }
 
 Prenda -d-> Color
@@ -32,6 +34,10 @@ enum TipoPrenda{
   REMERA
   PANTALÓN
   ZAPATILLA
+  PANTALON_DE_VESTIR
+  CHOMBA
+  ZAPATOS
+  CAMISA
 }
 
 
