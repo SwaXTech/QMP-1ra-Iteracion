@@ -1,0 +1,44 @@
+@startuml QMP Segunda Iteración
+
+class Prenda{
+  material
+  colorPrimario
+  tipoPrenda
+  colorSecundario
+}
+
+Prenda -d-> Material
+enum Material{
+  ALGODON
+  JEAN
+  CUERO
+}
+
+Prenda -d-> Color
+class Color{
+  rojo
+  verde
+  azul
+}
+
+Prenda -d-> TipoPrenda
+enum TipoPrenda{
+  REMERA
+  PANTALÓN
+  ZAPATILLA
+}
+
+
+Prenda -d-> Categoria
+enum Categoria{
+  CALZADO
+  PARTE_SUPERIOR
+  PARTE_INFERIOR
+  ACCESORIO
+}
+
+
+
+
+
+@enduml
