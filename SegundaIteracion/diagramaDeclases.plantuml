@@ -1,11 +1,19 @@
 @startuml QMP Segunda Iteración
 
 class Prenda{
+  tipoPrenda
   material
   colorPrimario
-  tipoPrenda
   colorSecundario
   trama
+
+  setMaterial(unMaterial)
+  setColorPrimario(unColor)
+  setColorSecundario(unColor)
+  setTrama(unaTrama)
+
+  finalizarYValidar()
+  guardarParaDespues()
 }
 
 Prenda -d-> Material
