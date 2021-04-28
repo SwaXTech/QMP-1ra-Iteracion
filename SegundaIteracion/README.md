@@ -108,10 +108,10 @@ class Prenda{
 > Poder guardar una prenda solamente si esta es válida.
 
 
-Para estos requerimiento, creé la clase Vestuario, quien será la responsable de validar si una prenda es válida para ser guardada,así como para guardar el borrador de una prenda. El enunciado aclara que es el borrador de la **última** prenda, con lo cual se trata de una variable de tipo `Prenda`.
+Para estos requerimiento, creé la clase Negocio, quien será la responsable de validar si una prenda es válida para ser guardada,así como para guardar el borrador de una prenda. El enunciado aclara que es el borrador de la **última** prenda, con lo cual se trata de una variable de tipo `Prenda`.
 
 ```
-class Vestuario{
+class Negocio{
 
   borrador
   prendas[]
@@ -181,6 +181,8 @@ uniformeSanJuan = new Uniforme(
 )
 
 ```
+
+Además puede formalizarse el primer requerimiento en la clase `Negocio` con el método `recibirSugerencia()` que validará el uniforme y lo agregaría a una ~hipotetica~ lista de uniformes.
 
 
 

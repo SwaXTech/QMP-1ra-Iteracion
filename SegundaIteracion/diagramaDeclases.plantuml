@@ -53,15 +53,17 @@ enum Trama{
 }
 
 
-Vestuario -> "*" Prenda
-Vestuario -> Prenda
-class Vestuario{
+Negocio -> "*" Prenda
+Negocio -> Prenda
+class Negocio{
 
   últimoBorrador
   prendas[]
 
   validarYAgregarPrenda(unaPrenda)
   guardarBorrador(unaPrenda)
+
+  recibirSugerencia(unUniforme)
 
 }
 
