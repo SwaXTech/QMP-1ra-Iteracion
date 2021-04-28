@@ -11,9 +11,6 @@ class Prenda{
   setColorPrimario(unColor)
   setColorSecundario(unColor)
   setTrama(unaTrama)
-
-  finalizarYValidar()
-  guardarParaDespues()
 }
 
 Prenda -d-> Material
@@ -56,6 +53,17 @@ enum Trama{
 }
 
 
+Vestuario -> "*" Prenda
+Vestuario -> Prenda
+class Vestuario{
+
+  últimoBorrador
+  prendas[]
+
+  validarYAgregarPrenda(unaPrenda)
+  guardarBorrador(unaPrenda)
+
+}
 
 
 
