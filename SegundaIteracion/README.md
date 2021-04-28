@@ -191,6 +191,6 @@ Además puede formalizarse el primer requerimiento en la clase `Negocio` con el 
 
 # Diagrama de Clases
 
-![diagramaDeClases](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/SwaXTech/QMP-1ra-Iteracion/main/SegundaIteracion/diagramaDeclases.plantuml)
+![diagramaDeClases](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/SwaXTech/QueMePongo/main/SegundaIteracion/diagramaDeclases.plantuml)
 
 
