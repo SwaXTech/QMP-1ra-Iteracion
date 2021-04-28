@@ -5,6 +5,7 @@ class Prenda{
   colorPrimario
   tipoPrenda
   colorSecundario
+  trama
 }
 
 Prenda -d-> Material
@@ -35,6 +36,15 @@ enum Categoria{
   PARTE_SUPERIOR
   PARTE_INFERIOR
   ACCESORIO
+}
+
+Prenda -d-> Trama
+enum Trama{
+  LISA
+  RAYADA
+  LUNARES
+  CUADROS
+  ESTAMPADO
 }
 
 
