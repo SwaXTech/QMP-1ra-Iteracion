@@ -66,5 +66,16 @@ class Vestuario{
 }
 
 
+Uniforme -l-> Prenda
+Uniforme -l-> Prenda
+Uniforme -l-> Prenda
+class Uniforme{
+  parteSuperior
+  parteInferior
+  calzado
+}
+
+
+
 
 @enduml

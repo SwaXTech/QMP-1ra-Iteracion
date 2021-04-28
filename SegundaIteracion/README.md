@@ -140,6 +140,52 @@ class Vestuario{
 ---
 
 
+## Acercamiento a otros requerimientos
+
+> Poder recibir sugerencias de uniformes armados
+
+> Un uniforme siempre conste de una prenda superior, una inferior y un calzado
+
+> Poder configurar diferentes uniformes para distintas instituciones (Ej: para el colegio San Juan debe ser una chomba verde de piqué, un pantalón de acetato gris y zapatillas blancas, mientras que para el Instituto Johnson siempre será una camisa blanca, pantalón de vestir negro y zapatos negros) 
+
+Para cumplir con este requerimiento, es necesaria una nueva clase Uniforme:
+
+```
+class Uniforme {
+
+  var parteSuperior
+  var parteInferior
+  var calzado
+
+}
+
+```
+
+En donde los distintos uniformes ejemplificados por el enunciado pueden ser instancias de esta clase.
+
+Utilizo notación con named parameters para mayor claridad.
+
+```
+uniformeSanJuan = new Uniforme(
+
+  parteSuperior = new Prenda(TipoPrenda.CHOMBA)
+                      .setMaterial(Material.PIQUE)
+                      .setColorPrimario(new Color(0, 255, 0))
+
+  parteInferior = new Prenda(TipoPrenda.PANTALON)
+                      .setMaterial(Material.ACETATO)
+                      .setColorPrimario(new Color(150, 150, 150))
+
+  calzado       = new Prenda(TipoPrenda.ZAPATILLA)
+                      .setColorPrimario(new Color(255, 255, 255))
+)
+
+```
+
+
+
+
+
 
 
 
