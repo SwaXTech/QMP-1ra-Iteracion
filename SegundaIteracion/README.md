@@ -157,6 +157,8 @@ class Uniforme {
   var parteInferior
   var calzado
 
+  constuctor(parteSuperior, parteInferior, calzado)
+
 }
 
 ```
