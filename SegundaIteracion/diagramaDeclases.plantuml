@@ -59,6 +59,7 @@ class Negocio{
 
   últimoBorrador
   prendas[]
+  uniformes[]
 
   validarYAgregarPrenda(unaPrenda)
   guardarBorrador(unaPrenda)

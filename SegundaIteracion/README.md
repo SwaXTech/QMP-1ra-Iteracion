@@ -182,7 +182,7 @@ uniformeSanJuan = new Uniforme(
 
 ```
 
-Además puede formalizarse el primer requerimiento en la clase `Negocio` con el método `recibirSugerencia()` que validará el uniforme y lo agregaría a una ~hipotetica~ lista de uniformes.
+Además puede formalizarse el primer requerimiento en la clase `Negocio` con el método `recibirSugerencia()` que validará el uniforme y lo agregaría a una lista de uniformes.
 
 
 
