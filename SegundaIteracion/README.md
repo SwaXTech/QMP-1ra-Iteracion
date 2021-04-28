@@ -187,9 +187,11 @@ uniformeSanJuan = new Uniforme(
 Además puede formalizarse el primer requerimiento en la clase `Negocio` con el método `recibirSugerencia()` que validará el uniforme y lo agregaría a una lista de uniformes.
 
 
+---
 
+# Diagrama de Clases
 
-
+![diagramaDeClases](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/SwaXTech/SegundaIteracion/diagramaDeClases.plantuml)
 
 
 
