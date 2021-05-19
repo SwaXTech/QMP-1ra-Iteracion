@@ -1,6 +1,6 @@
 package com.qmp.clima;
 
-public class BuenosAires {
+public class BuenosAires implements Ciudad{
 
   ServicioClima servicioClima = RepositorioServicios.getInstance().getServicioActual();
   
