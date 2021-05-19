@@ -28,6 +28,9 @@ public class PrendaBuilder {
   }
 
   public PrendaBuilder especificarTrama(Trama trama){
+    if(trama == null)
+      throw new RuntimeException("La trama no debe ser nula");
+    
     this.trama = trama;
     return this;
   }
@@ -37,10 +40,5 @@ public class PrendaBuilder {
       tipoDePrenda, material, colorPrincipal, colorSecundario, trama
     );
   }
-
-
-
-
-
   
 }
