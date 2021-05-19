@@ -9,12 +9,14 @@ public class AccuWeather implements ServicioClima{
 
   private List<Map<String, Object>> cache;
   private LocalDate lastUpdate;
+  private double gastoActual = 0;
 
   private Object valorDe(String lugar, String key){
     if(hayQueActualizar()){
       List<Map<String, Object>> condicionesClimaticas = consultarApi(lugar);  
       cache = condicionesClimaticas;
       lastUpdate = LocalDate.now();
+      gastoActual += 0.5;
 
       return condicionesClimaticas.get(0).get(key);
     }
@@ -40,6 +42,11 @@ public class AccuWeather implements ServicioClima{
   @Override
   public String probabilidadDeLluvias(String lugar) {
     return ((int)valorDe(lugar, "PrecipitationProbability") * 100) + "%";
+  }
+
+  @Override
+  public double gastoActual(){
+    return gastoActual;
   }
   
   
