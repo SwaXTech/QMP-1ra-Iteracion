@@ -8,28 +8,22 @@ public class Atuendo {
   private final Prenda parteSuperior;
   private final Prenda calzado;
   private final Prenda accesorio;
-  private final Ciudad ciudad;
   
-  public Atuendo(Ciudad ciudad, Prenda parteInferior, Prenda parteSuperior, Prenda calzado, Prenda accesorio) {
+  public Atuendo(Prenda parteInferior, Prenda parteSuperior, Prenda calzado, Prenda accesorio) {
     this.parteInferior = parteInferior;
     this.parteSuperior = parteSuperior;
     this.calzado = calzado;
     this.accesorio = accesorio;
-    this.ciudad = ciudad;
   }
 
-  public Atuendo sugerirse(){
-    validarTemperatura(parteSuperior);
-    validarTemperatura(parteInferior);
-    validarTemperatura(calzado);
-    validarTemperatura(accesorio);
-    return this;
+  public boolean esSugerible(Ciudad ciudad){
+    return validarTemperatura(ciudad, parteSuperior) &&
+           validarTemperatura(ciudad, parteInferior) &&
+           validarTemperatura(ciudad, calzado)       &&
+           validarTemperatura(ciudad, accesorio);
   }
 
-  private void validarTemperatura(Prenda prenda){
-    if(!prenda.esAptaPara(ciudad.temperaturaCelsius()))
-      throw new RuntimeException("La prenda no es adecuada");
-
-    
+  private boolean validarTemperatura(Ciudad ciudad, Prenda prenda){
+    return prenda.esAptaPara(ciudad.temperaturaCelsius());
   }
 }
