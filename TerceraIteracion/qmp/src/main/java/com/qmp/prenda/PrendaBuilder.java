@@ -6,6 +6,7 @@ public class PrendaBuilder {
   private Color colorPrincipal;
   private Color colorSecundario;
   private Trama trama;
+  private int temperaturaAdecuada;
 
   public PrendaBuilder(TipoDePrenda tipoDePrenda){
     this.tipoDePrenda = tipoDePrenda;
@@ -19,6 +20,11 @@ public class PrendaBuilder {
 
   public PrendaBuilder especificarColorPrincipal(Color colorPrincipal){
     this.colorPrincipal = colorPrincipal;
+    return this;
+  }
+
+  public PrendaBuilder especificarTemperaturaAdecuada(int temperaturaAdecuada){
+    this.temperaturaAdecuada = temperaturaAdecuada;
     return this;
   }
 
@@ -37,7 +43,7 @@ public class PrendaBuilder {
 
   public Prenda crearPrenda(){
     return new Prenda(
-      tipoDePrenda, material, colorPrincipal, colorSecundario, trama
+      tipoDePrenda, material, colorPrincipal, colorSecundario, trama, temperaturaAdecuada
     );
   }
   

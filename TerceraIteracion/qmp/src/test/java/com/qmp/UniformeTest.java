@@ -70,21 +70,24 @@ class UniformeTest {
         Material.PIQUE,
         new Color(0,255,0),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       ),
       new Prenda(
         new TipoDePrenda(Categoria.PARTE_INFERIOR),
         Material.ACETATO,
         new Color(155,155,155),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       ),
       new Prenda(
         new TipoDePrenda(Categoria.CALZADO),
         null,
         new Color(0,0,0),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       )
     );
   }
@@ -96,21 +99,24 @@ class UniformeTest {
         null,
         new Color(255,255,255),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       ),
       new Prenda(
         new TipoDePrenda(Categoria.PARTE_INFERIOR),
         null,
         new Color(0,0,0),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       ),
       new Prenda(
         new TipoDePrenda(Categoria.CALZADO),
         null,
         new Color(0,0,0),
         null,
-        Trama.LISA
+        Trama.LISA,
+        24
       )
     );
   }

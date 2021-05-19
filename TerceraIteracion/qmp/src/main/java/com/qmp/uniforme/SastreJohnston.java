@@ -13,6 +13,7 @@ public class SastreJohnston implements Sastre{
     return new PrendaBuilder(new TipoDePrenda(Categoria.PARTE_SUPERIOR)) //TODO: Especificar chomba
         .especificarColorPrincipal(new Color(255,255,255))
         .especificarMaterial(Material.PIQUE)
+        .especificarTemperaturaAdecuada(24)
         .crearPrenda();
   }
 
@@ -20,6 +21,7 @@ public class SastreJohnston implements Sastre{
   public Prenda fabricarParteInferior() {
     return new PrendaBuilder(new TipoDePrenda(Categoria.PARTE_INFERIOR)) //TODO: Especificar pantalon
     .especificarColorPrincipal(new Color(0,0,0))
+    .especificarTemperaturaAdecuada(24)
     .crearPrenda();
   }
 
@@ -27,6 +29,7 @@ public class SastreJohnston implements Sastre{
   public Prenda fabricarCalzado() {
     return new PrendaBuilder(new TipoDePrenda(Categoria.CALZADO)) //TODO: Especificar calzado
     .especificarColorPrincipal(new Color(0,0,0))
+    .especificarTemperaturaAdecuada(24)
     .crearPrenda();
   }
 

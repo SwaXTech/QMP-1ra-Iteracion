@@ -14,6 +14,7 @@ public class SastreSanJuan implements Sastre{
     return new PrendaBuilder(new TipoDePrenda(Categoria.PARTE_SUPERIOR)) //TODO: Especificar chomba
         .especificarColorPrincipal(new Color(0,255,0))
         .especificarMaterial(Material.PIQUE)
+        .especificarTemperaturaAdecuada(24)
         .crearPrenda();
   }
 
@@ -22,6 +23,7 @@ public class SastreSanJuan implements Sastre{
     return new PrendaBuilder(new TipoDePrenda(Categoria.PARTE_INFERIOR)) //TODO: Especificar pantalon
     .especificarColorPrincipal(new Color(155,155,155))
     .especificarMaterial(Material.ACETATO)
+    .especificarTemperaturaAdecuada(24)
     .crearPrenda();
   }
 
@@ -29,6 +31,7 @@ public class SastreSanJuan implements Sastre{
   public Prenda fabricarCalzado() {
     return new PrendaBuilder(new TipoDePrenda(Categoria.CALZADO)) //TODO: Especificar calzado
     .especificarColorPrincipal(new Color(255,255,255))
+    .especificarTemperaturaAdecuada(24)
     .crearPrenda();
   }
 
