@@ -26,10 +26,19 @@ public class SastreSanJuan implements Sastre{
   }
 
   @Override
-  public Prenda fabricarParteCalzado() {
+  public Prenda fabricarCalzado() {
     return new PrendaBuilder(new TipoDePrenda(Categoria.CALZADO)) //TODO: Especificar calzado
     .especificarColorPrincipal(new Color(255,255,255))
     .crearPrenda();
+  }
+
+  @Override
+  public Uniforme crearUniforme() {
+    return new Uniforme(
+      fabricarParteSuperior(),
+      fabricarParteInferior(),
+      fabricarCalzado()
+    );
   }
   
 }

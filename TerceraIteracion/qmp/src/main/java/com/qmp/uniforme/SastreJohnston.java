@@ -24,9 +24,18 @@ public class SastreJohnston implements Sastre{
   }
 
   @Override
-  public Prenda fabricarParteCalzado() {
+  public Prenda fabricarCalzado() {
     return new PrendaBuilder(new TipoDePrenda(Categoria.CALZADO)) //TODO: Especificar calzado
     .especificarColorPrincipal(new Color(0,0,0))
     .crearPrenda();
+  }
+
+  @Override
+  public Uniforme crearUniforme() {
+    return new Uniforme(
+      fabricarParteSuperior(),
+      fabricarParteInferior(),
+      fabricarCalzado()
+    );
   }
 }

@@ -5,6 +5,6 @@ import com.qmp.prenda.Prenda;
 public interface Sastre {
   Prenda fabricarParteSuperior();
   Prenda fabricarParteInferior();
-  Prenda fabricarParteCalzado();
-
+  Prenda fabricarCalzado();
+  Uniforme crearUniforme();
 }
