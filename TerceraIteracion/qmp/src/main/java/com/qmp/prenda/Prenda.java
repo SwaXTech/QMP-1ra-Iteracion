@@ -16,6 +16,10 @@ public class Prenda{
     this.trama = trama;
   }
 
+  public Categoria getCategoria(){
+    return tipoDePrenda.getCategoria();
+  }
+
   
   
 }
