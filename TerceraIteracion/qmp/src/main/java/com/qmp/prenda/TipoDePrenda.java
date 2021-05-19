@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.prenda;
 
 public class TipoDePrenda {
   Categoria categoria;

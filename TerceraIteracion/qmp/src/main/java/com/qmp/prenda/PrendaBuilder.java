@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.prenda;
 
 public class PrendaBuilder {
   private TipoDePrenda tipoDePrenda;
@@ -7,36 +7,32 @@ public class PrendaBuilder {
   private Color colorSecundario;
   private Trama trama;
 
-  public PrendaBuilder() {
+  public PrendaBuilder(TipoDePrenda tipoDePrenda){
+    this.tipoDePrenda = tipoDePrenda;
     this.trama = Trama.LISA;
   }
 
-  PrendaBuilder especificarTipoPrenda(TipoDePrenda tipoDePrenda){
-    this.tipoDePrenda = tipoDePrenda;
-    return this;
-  }
-
-  PrendaBuilder especificarMaterial(Material material){
+  public PrendaBuilder especificarMaterial(Material material){
     this.material = material;
     return this;
   }
 
-  PrendaBuilder especificarColorPrincipal(Color colorPrincipal){
+  public PrendaBuilder especificarColorPrincipal(Color colorPrincipal){
     this.colorPrincipal = colorPrincipal;
     return this;
   }
 
-  PrendaBuilder especificarColorSecundario(Color colorSecundario){
+  public PrendaBuilder especificarColorSecundario(Color colorSecundario){
     this.colorSecundario = colorSecundario;
     return this;
   }
 
-  PrendaBuilder especificarTrama(Trama trama){
+  public PrendaBuilder especificarTrama(Trama trama){
     this.trama = trama;
     return this;
   }
 
-  Prenda crearPrenda(){
+  public Prenda crearPrenda(){
     return new Prenda(
       tipoDePrenda, material, colorPrincipal, colorSecundario, trama
     );
