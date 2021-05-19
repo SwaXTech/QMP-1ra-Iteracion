@@ -10,6 +10,29 @@ Se corrigen los errores de iteraciones anteriores
 - Se usa Abstract Factory
 - Se reifica el tipoDePrenda que conoce su categoría
 
+## Repositorio de Servicios
+
+Para que sea sencillo establecer varios servicios declima
+
+## Clase Atuendo
+
+Para que tenga comportamiento propio, como por ejemplo saber si es sugerible
+
+## Clase Buenos Aires
+
+Para reificar la ciudad, que se va a usar a lo largo del tp.
+
+## Interfaz ciudad
+
+La implementa Buenos Aires, pero pueden agregarse más ciudades.
+Las ciudades deben saber, por ahora, su temperatura y su prob. de lluvia
+
+## Interfaz ServicioClima
+
+Para los distintos servicios, deben ser capaces de devolver temperatura,
+la probabilidad de lluvia y el gasto acumulado por las peticiones.
+
+
 
 
 
