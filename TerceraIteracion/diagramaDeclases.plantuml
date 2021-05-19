@@ -1,0 +1,122 @@
+@startuml QMP Tercera Iteración
+
+class Prenda{
+  colorPrimario
+  colorSecundario
+  material
+  trama
+  tipoDePrenda
+}
+
+Prenda -d-> TipoPrenda
+class TipoPrenda{
+  categoria
+}
+Prenda -d-> Categoria
+enum Categoria{
+  CALZADO
+  PARTE_SUPERIOR
+  PARTE_INFERIOR
+  ACCESORIO
+}
+
+Prenda -d-> Material
+enum Material{
+  ALGODON
+  JEAN
+  CUERO
+  PIQUÉ
+  ACETATO
+}
+
+Prenda -d-> Color
+class Color{
+  rojo
+  verde
+  azul
+}
+
+
+
+Prenda -d-> Trama
+enum Trama{
+  LISA
+  RAYADA
+  LUNARES
+  CUADROS
+  ESTAMPADO
+}
+
+
+' Negocio -> "*" Prenda
+' Negocio -> Prenda
+' class Negocio{
+
+'   últimoBorrador
+'   prendas[]
+'   uniformes[]
+
+'   validarYAgregarPrenda(unaPrenda)
+'   guardarBorrador(unaPrenda)
+
+'   recibirSugerencia(unUniforme)
+
+' }
+
+
+' Uniforme -l-> Prenda
+' Uniforme -l-> Prenda
+' Uniforme -l-> Prenda
+' class Uniforme{
+'   parteSuperior
+'   parteInferior
+'   calzado
+' }
+
+PrendaBuilder .. Prenda
+class PrendaBuilder{
+
+  tipoDePrenda
+  material
+  colorPrincipal
+  colorSecundario
+  trama
+
+  especificarTipoPrenda()
+  especificarMaterial()
+  especificarColorPrimario()
+  especificarColorSecundario()
+  especificarTrama()
+  crearPrenda()
+}
+
+Uniforme ->"3" Prenda
+class Uniforme{
+  parteSuperior
+  parteInferior
+  calzado
+
+  fabricarUniforme(sastre)
+}
+
+interface Sastre{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+
+class SastreSanJuan{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+class SastreJohnston{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+
+SastreSanJuan .u.> Sastre
+SastreJohnston .u.> Sastre
+
+@enduml
