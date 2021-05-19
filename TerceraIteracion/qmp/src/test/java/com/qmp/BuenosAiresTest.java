@@ -10,7 +10,13 @@ import org.junit.jupiter.api.Test;
 public class BuenosAiresTest {
   
   @Test
-  void enBuenosAiresHace24Grados(){
+  void enBuenosAiresHace25Grados(){
     assertEquals(25, new BuenosAires().temperaturaCelsius());
   }
+
+  @Test
+  void enBuenosAiresNoVaALlover(){
+    assertEquals("0%", new BuenosAires().probabilidadDeLluvia());
+  }
+
 }
