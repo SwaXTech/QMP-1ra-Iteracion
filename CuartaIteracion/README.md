@@ -2,6 +2,14 @@
 
 > La tercera iteración fue el bonus de la 2da iteracion
 
+## Diagrama de Clases
+
+# Diagrama de Clases
+
+![diagramaDeClases](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/SwaXTech/QueMePongo/main/CuartaIteracion/diagramaDeclases.plantuml)
+
+
+
 ## Puesta a punto
 
 Se corrigen los errores de iteraciones anteriores
