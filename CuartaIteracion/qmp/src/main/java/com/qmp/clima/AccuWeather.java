@@ -23,7 +23,7 @@ public class AccuWeather implements ServicioClima{
     return cache.get(0).get(key);
   }
 
-  private List<Map<String, Object>> consultarApi(String lugar) {
+  public List<Map<String, Object>> consultarApi(String lugar) {
     AccuWeatherAPI apiClima = new AccuWeatherAPI();
     List<Map<String, Object>> condicionesClimaticas = apiClima.getWeather(lugar);
     return condicionesClimaticas;
