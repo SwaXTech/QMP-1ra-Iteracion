@@ -1,8 +1,6 @@
 package com.qmp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import com.qmp.clima.AccuWeather;
 import com.qmp.clima.BuenosAires;
@@ -18,11 +16,7 @@ public class BuenosAiresTest {
   @BeforeAll
   static void setup(){
     repo = RepositorioServicios.getInstance();
-    AccuWeather accu = mock(AccuWeather.class);
-    when(accu.temperatura("Buenos Aires, Argentina")).thenReturn(25 + 32);
-    when(accu.probabilidadDeLluvias("Buenos Aires, Argentina")).thenReturn("0%");
-    when(accu.gastoActual()).thenReturn(5.0);
-
+    AccuWeather accu = new AccuWeather();
     repo.agregarServicio(accu);
     repo.setServicioActual(accu);
 
@@ -39,10 +33,11 @@ public class BuenosAiresTest {
   }
 
   @Test
-  void elGastoFueDe5USD(){
+  void enEsteTestSeGastoSolo50centavos(){
     new BuenosAires().probabilidadDeLluvia();
     new BuenosAires().probabilidadDeLluvia();
-    assertEquals(5.0, repo.getServicioActual().gastoActual());
+    assertEquals(0.5, repo.getServicioActual().gastoActual());
   }
+  
 
 }

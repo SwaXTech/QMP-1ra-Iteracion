@@ -29,5 +29,9 @@ public class RepositorioServicios {
   public static RepositorioServicios getInstance() {
     return INSTANCE;
   }
+
+  public void clear(){
+    servicios.clear();
+  }
   
 }
