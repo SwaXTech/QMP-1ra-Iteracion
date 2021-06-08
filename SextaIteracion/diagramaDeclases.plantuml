@@ -1,0 +1,172 @@
+@startuml QMP Tercera Iteración
+
+class Prenda{
+  colorPrimario
+  colorSecundario
+  material
+  trama
+  tipoDePrenda
+}
+
+Prenda -d-> TipoPrenda
+class TipoPrenda{
+  categoria
+}
+Prenda -d-> Categoria
+enum Categoria{
+  CALZADO
+  PARTE_SUPERIOR
+  PARTE_INFERIOR
+  ACCESORIO
+}
+
+Prenda -d-> Material
+enum Material{
+  ALGODON
+  JEAN
+  CUERO
+  PIQUÉ
+  ACETATO
+}
+
+Prenda -d-> Color
+class Color{
+  rojo
+  verde
+  azul
+}
+
+
+
+Prenda -d-> Trama
+enum Trama{
+  LISA
+  RAYADA
+  LUNARES
+  CUADROS
+  ESTAMPADO
+}
+
+PrendaBuilder .. Prenda
+class PrendaBuilder{
+
+  tipoDePrenda
+  material
+  colorPrincipal
+  colorSecundario
+  trama
+
+  especificarTipoPrenda()
+  especificarMaterial()
+  especificarColorPrimario()
+  especificarColorSecundario()
+  especificarTrama()
+  crearPrenda()
+}
+
+Uniforme ->"3" Prenda
+class Uniforme{
+  parteSuperior
+  parteInferior
+  calzado
+
+  fabricarUniforme(sastre)
+}
+
+interface Sastre{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+
+class SastreSanJuan{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+class SastreJohnston{
+  fabricarParteSuperior()
+  fabricarParteInferior()
+  fabricarCalzado()
+}
+
+SastreSanJuan .u.> Sastre
+SastreJohnston .u.> Sastre
+
+
+RepositorioServicios -> "*" ServicioClima
+class RepositorioServicios{
+  servicios
+  agregarServicio()
+  removerServicio()
+  servicioActual()
+}
+
+interface ServicioClima{
+  temperatura()
+  probabilidadDeLluvia()
+  gastoActual()
+}
+
+
+AccuWeather ..> ServicioClima
+class AccuWeather{
+  
+}
+
+interface Ciudad{
+  temperaturaCelsius()
+  probabilidadDeLluvia()
+}
+
+BuenosAires -> RepositorioServicios
+BuenosAires ..> Ciudad
+class BuenosAires{}
+
+Atuendo -l-> "4" Prenda
+Atuendo -> Ciudad
+class Atuendo{
+  parteInferior
+  parteSuperior
+  calzado
+  accesorio
+  esSugerible()
+}
+
+Usuario -> "*" Guardarropas
+Usuario -l-> "*" Sugerencia
+class Usuario{
+  guardarropas
+  recibirSugerencia()
+  compartirGuardarropas()
+}
+
+class Guardarropas{
+  atuendos
+  criterio
+}
+
+abstract Sugerencia{
+  atuendo
+  guardarropas
+  estado
+  aprobar()
+  rechazar()
+  hacerCambio()
+  deshacerCambio()
+}
+
+SugerenciaAgregar -u-|> Sugerencia
+SugerenciaRemover -u-|> Sugerencia
+class SugerenciaAgregar{}
+class SugerenciaRemover{}
+
+Sugerencia -l-> Estado
+enum Estado{
+  APROBADO,
+  RECHAZADO,
+  PENDIENTE
+}
+
+
+@enduml
