@@ -9,4 +9,13 @@ public class Color {
     this.verde = verde;
     this.azul = azul;
   }
+  public int getRojo() {
+    return rojo;
+  }
+  public int getVerde() {
+    return verde;
+  }
+  public int getAzul() {
+    return azul;
+  }
 }

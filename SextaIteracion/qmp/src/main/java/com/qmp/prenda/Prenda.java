@@ -25,6 +25,30 @@ public class Prenda{
   public boolean esAptaPara(int temperaturaEnCelsius){
     return temperaturaAdecuada > temperaturaEnCelsius;
   }
+
+  public TipoDePrenda getTipoDePrenda() {
+    return tipoDePrenda;
+  }
+
+  public Material getMaterial() {
+    return material;
+  }
+
+  public Color getColorPrincipal() {
+    return colorPrincipal;
+  }
+
+  public Color getColorSecundario() {
+    return colorSecundario;
+  }
+
+  public Trama getTrama() {
+    return trama;
+  }
+
+  public int getTemperaturaAdecuada() {
+    return temperaturaAdecuada;
+  }
   
   
 }
