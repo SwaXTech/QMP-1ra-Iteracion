@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.recomendaciones;
 
 import java.time.LocalDate;
 import java.util.List;

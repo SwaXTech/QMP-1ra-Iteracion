@@ -3,7 +3,7 @@ package com.qmp.clima;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.qmp.PrendaDelDia;
+import com.qmp.recomendaciones.PrendaDelDia;
 
 public class Alertas {
 

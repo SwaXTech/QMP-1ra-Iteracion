@@ -24,6 +24,6 @@ public class Atuendo {
   }
 
   private boolean validarTemperatura(Ciudad ciudad, Prenda prenda){
-    return prenda.esAptaPara(ciudad.temperaturaCelsius());
+    return prenda.esAptaPara(ciudad.condicionesClimaticas());
   }
 }
