@@ -1,14 +1,14 @@
 package com.qmp;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import com.qmp.clima.BuenosAires;
-import com.qmp.clima.RepositorioServicios;
+import com.qmp.clima.Ciudad;
 import com.qmp.prenda.Prenda;
 
 public class PrendaDelDia {
 
-  private Prenda prendaRecomendada;
+  private List<PrendaRecomendada> prendasRecomendadas;
   private LocalDate ultimoUpdate;
   private final PrendaDelDia INSTANCE = new PrendaDelDia();
 
@@ -16,23 +16,23 @@ public class PrendaDelDia {
 
   public void actualizarPrenda(){
     ultimoUpdate = LocalDate.now();
-    int temperatura = RepositorioServicios.getInstance().getServicioActual().temperatura("Buenos Aires, Argentina");
-    RepositorioPrendas.getINSTANCE().prendaPara(prenda -> prenda.esAptaPara(temperatura));
+    prendasRecomendadas.forEach(PrendaRecomendada::actualizarPrenda);
   }
 
   public PrendaDelDia getINSTANCE() {
     return INSTANCE;
   }
 
-  public Prenda getPrendaRecomendada() {
-    return prendaRecomendada;
+  public Prenda getPrendaRecomendada(String ciudad) {
+    return prendasRecomendadas.stream()
+                .filter(prendaRecomendada -> prendaRecomendada.esEstaCiudad(ciudad))
+                .findAny().orElseThrow(() -> new RuntimeException("No hay ciudades cargadas"))
+                .getPrenda();
   }
 
-
-
-
-
-  
+  public void agregarCiudad(Ciudad ciudad){
+    prendasRecomendadas.add(new PrendaRecomendada(ciudad));
+  }
   
   
 }

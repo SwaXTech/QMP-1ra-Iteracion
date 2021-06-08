@@ -48,6 +48,11 @@ public class AccuWeather implements ServicioClima{
   public double gastoActual(){
     return gastoActual;
   }
+
+  @Override
+  public String[] alertas(String lugar) {
+    return (String[]) valorDe(lugar, "CurrentAlerts");
+  }
   
   
 }

@@ -5,4 +5,5 @@ public interface ServicioClima {
   int temperatura(String lugar);
   String probabilidadDeLluvias(String lugar);
   double gastoActual();
+  String[] alertas(String string);
 }

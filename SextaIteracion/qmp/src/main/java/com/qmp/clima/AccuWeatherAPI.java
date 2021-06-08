@@ -22,6 +22,7 @@ public final class AccuWeatherAPI {
             put("UnitType", 18);
           }
         });
+        put("CurrentAlerts", new String[]{"STORM", "HAIL"});
       }
     });
   }
