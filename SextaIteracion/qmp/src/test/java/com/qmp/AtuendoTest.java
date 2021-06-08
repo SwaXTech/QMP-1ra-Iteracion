@@ -2,6 +2,8 @@ package com.qmp;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import java.util.Arrays;
+
 import com.qmp.atuendo.Atuendo;
 import com.qmp.clima.AccuWeather;
 import com.qmp.clima.Ciudad;
@@ -29,10 +31,10 @@ public class AtuendoTest {
   @Test
   void ropaDeInviernoNoEsSugerible(){
     Atuendo atuendo = new Atuendo(
-      new Prenda(new TipoDePrenda(Categoria.PARTE_SUPERIOR), null, new Color(0,0,0), null, null, 10),
-      new Prenda(new TipoDePrenda(Categoria.PARTE_INFERIOR), null, new Color(0,0,0), null, null, 10),
-      new Prenda(new TipoDePrenda(Categoria.CALZADO), null, new Color(0,0,0), null, null, 10),
-      new Prenda(new TipoDePrenda(Categoria.ACCESORIO), null, new Color(0,0,0), null, null, 10)
+      new Prenda(new TipoDePrenda(Categoria.PARTE_SUPERIOR), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"})),
+      new Prenda(new TipoDePrenda(Categoria.PARTE_INFERIOR), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"})),
+      new Prenda(new TipoDePrenda(Categoria.CALZADO), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"})),
+      new Prenda(new TipoDePrenda(Categoria.ACCESORIO), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"}))
     );
 
     assertFalse(atuendo.esSugerible(new Ciudad("Buenos Aires, Argentina")));

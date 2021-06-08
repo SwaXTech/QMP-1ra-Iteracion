@@ -1,5 +1,7 @@
 package com.qmp.prenda;
 
+import java.util.List;
+
 public class PrendaBuilder {
   private TipoDePrenda tipoDePrenda;
   private Material material;
@@ -7,6 +9,7 @@ public class PrendaBuilder {
   private Color colorSecundario;
   private Trama trama;
   private int temperaturaAdecuada;
+  private List<String> condicionesClimaticas;
 
   public PrendaBuilder(TipoDePrenda tipoDePrenda){
     this.tipoDePrenda = tipoDePrenda;
@@ -41,9 +44,14 @@ public class PrendaBuilder {
     return this;
   }
 
+  public PrendaBuilder especificarCondicionesClimaticas(List<String> condicionesClimaticas){
+    this.condicionesClimaticas = condicionesClimaticas;
+    return this;
+  }
+
   public Prenda crearPrenda(){
     return new Prenda(
-      tipoDePrenda, material, colorPrincipal, colorSecundario, trama, temperaturaAdecuada
+      tipoDePrenda, material, colorPrincipal, colorSecundario, trama, temperaturaAdecuada, condicionesClimaticas
     );
   }
   

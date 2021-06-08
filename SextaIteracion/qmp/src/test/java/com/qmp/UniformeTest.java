@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+
 import com.qmp.prenda.Categoria;
 import com.qmp.prenda.Color;
 import com.qmp.prenda.Material;
@@ -71,7 +73,8 @@ class UniformeTest {
         new Color(0,255,0),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       ),
       new Prenda(
         new TipoDePrenda(Categoria.PARTE_INFERIOR),
@@ -79,7 +82,8 @@ class UniformeTest {
         new Color(155,155,155),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       ),
       new Prenda(
         new TipoDePrenda(Categoria.CALZADO),
@@ -87,7 +91,8 @@ class UniformeTest {
         new Color(0,0,0),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       )
     );
   }
@@ -100,7 +105,8 @@ class UniformeTest {
         new Color(255,255,255),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       ),
       new Prenda(
         new TipoDePrenda(Categoria.PARTE_INFERIOR),
@@ -108,7 +114,8 @@ class UniformeTest {
         new Color(0,0,0),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       ),
       new Prenda(
         new TipoDePrenda(Categoria.CALZADO),
@@ -116,7 +123,8 @@ class UniformeTest {
         new Color(0,0,0),
         null,
         Trama.LISA,
-        24
+        24,
+        Arrays.asList(new String[]{"STORM"})
       )
     );
   }

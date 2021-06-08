@@ -1,6 +1,9 @@
 package com.qmp;
 
+import java.util.List;
+
 import com.qmp.clima.Ciudad;
+import com.qmp.clima.CondicionClimatica;
 import com.qmp.prenda.Prenda;
 
 public class PrendaRecomendada {
@@ -13,8 +16,8 @@ public class PrendaRecomendada {
   }
 
   public void actualizarPrenda(){
-    int temperatura = ciudad.temperaturaCelsius();
-    prenda = RepositorioPrendas.getINSTANCE().prendaPara(prenda -> prenda.esAptaPara(temperatura));
+    CondicionClimatica condicionesClimaticas = ciudad.condicionesClimaticas();
+    prenda = RepositorioPrendas.getINSTANCE().prendaPara(prenda -> prenda.esAptaPara(condicionesClimaticas));
   }
 
   public boolean esEstaCiudad(String ciudad){

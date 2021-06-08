@@ -1,29 +1,36 @@
 package com.qmp.prenda;
 
+import java.util.List;
+
+import com.qmp.clima.CondicionClimatica;
+
 public class Prenda{
   private final TipoDePrenda tipoDePrenda;
   private final Material material;
   private final Color colorPrincipal;
   private final Color colorSecundario;
   private final Trama trama;
+
   private final int temperaturaAdecuada;
-  
+  private final List<String> condicionesClimaticasAdecuadas;
+
   public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal, Color colorSecundario,
-      Trama trama, int temperaturaAdecuada) {
+      Trama trama, int temperaturaAdecuada, List<String> condicionesClimaticasAdecuadas) {
     this.tipoDePrenda = tipoDePrenda;
     this.material = material;
     this.colorPrincipal = colorPrincipal;
     this.colorSecundario = colorSecundario;
     this.trama = trama;
     this.temperaturaAdecuada = temperaturaAdecuada;
+    this.condicionesClimaticasAdecuadas = condicionesClimaticasAdecuadas;
   }
 
   public Categoria getCategoria(){
     return tipoDePrenda.getCategoria();
   }
 
-  public boolean esAptaPara(int temperaturaEnCelsius){
-    return temperaturaAdecuada > temperaturaEnCelsius;
+  public boolean esAptaPara(CondicionClimatica condicionClimatica){
+    return condicionClimatica.seAdapta(this);
   }
 
   public TipoDePrenda getTipoDePrenda() {
@@ -48,6 +55,10 @@ public class Prenda{
 
   public int getTemperaturaAdecuada() {
     return temperaturaAdecuada;
+  }
+
+  public List<String> getCondicionesClimaticasAdecuadas() {
+    return condicionesClimaticasAdecuadas;
   }
   
   

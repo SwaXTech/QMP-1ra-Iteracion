@@ -2,6 +2,9 @@ package com.qmp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+
+import com.qmp.clima.CondicionClimatica;
 import com.qmp.guardarropas.Guardarropas;
 import com.qmp.guardarropas.Sugerencia;
 import com.qmp.guardarropas.SugerenciaAgregar;
@@ -25,8 +28,8 @@ public class GuardarropasTest {
     usuario = new Usuario();
     usuario.agregarGuardarropas(guardarropas);
 
-    Prenda prenda1 = new Prenda(new TipoDePrenda(Categoria.PARTE_SUPERIOR), null, new Color(0,0,0), null, null, 10);
-    Prenda prenda2 = new Prenda(new TipoDePrenda(Categoria.PARTE_INFERIOR), null, new Color(0,0,0), null, null, 10);
+    Prenda prenda1 = new Prenda(new TipoDePrenda(Categoria.PARTE_SUPERIOR), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"}));
+    Prenda prenda2 = new Prenda(new TipoDePrenda(Categoria.PARTE_INFERIOR), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"}));
 
     Sugerencia sugerencia1 = new SugerenciaAgregar(guardarropas, prenda1);
     Sugerencia sugerencia2 = new SugerenciaRemover(guardarropas, prenda2);

@@ -10,16 +10,16 @@ public class PrendaDelDia {
 
   private List<PrendaRecomendada> prendasRecomendadas;
   private LocalDate ultimoUpdate;
-  private final PrendaDelDia INSTANCE = new PrendaDelDia();
+  private static final PrendaDelDia INSTANCE = new PrendaDelDia();
 
   private PrendaDelDia() {}
 
-  public void actualizarPrenda(){
+  public void actualizarPrendas(){
     ultimoUpdate = LocalDate.now();
     prendasRecomendadas.forEach(PrendaRecomendada::actualizarPrenda);
   }
 
-  public PrendaDelDia getINSTANCE() {
+  public static PrendaDelDia getINSTANCE() {
     return INSTANCE;
   }
 

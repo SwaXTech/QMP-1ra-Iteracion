@@ -3,6 +3,8 @@ package com.qmp.clima;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qmp.PrendaDelDia;
+
 public class Alertas {
 
   private final List<String> alertas = new ArrayList<>();
@@ -15,6 +17,7 @@ public class Alertas {
   public void actualizarAlertas(){
     alertas.clear();
     alertas.addAll(ciudad.alertasMeteorologicas());
+    PrendaDelDia.getINSTANCE().actualizarPrendas();
   }
 
   public List<String> getAlertas() {

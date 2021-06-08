@@ -27,4 +27,8 @@ public class Ciudad {
   public String getNombre() {
     return nombreCiudad;
   }
+
+  public CondicionClimatica condicionesClimaticas() {
+    return new CondicionClimatica(temperaturaCelsius(), alertasMeteorologicas());
+  }
 }
