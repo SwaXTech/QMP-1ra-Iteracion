@@ -14,12 +14,15 @@ public class Usuario {
 
   private boolean recibirNotificaciones = true;
   private boolean recibirMail = true;
+  
   private String email;
+  private String ciudad;
 
-  public Usuario(String email) {
+  public Usuario(String email, String ciudad) {
     this.misGuardarropas = new ArrayList<>();
     this.sugerencias = new ArrayList<>();
     this.email = email;
+    this.ciudad = ciudad;
   }
 
   public void agregarGuardarropas(Guardarropas guardarropas){
@@ -40,6 +43,10 @@ public class Usuario {
 
   public List<Sugerencia> sugerencias(){
     return sugerencias;
+  }
+
+  public String getCiudad() {
+    return ciudad;
   }
 
   public void dejarDeRecibirMails(){

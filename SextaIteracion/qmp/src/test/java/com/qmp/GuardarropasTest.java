@@ -24,7 +24,7 @@ public class GuardarropasTest {
   @BeforeEach
   void setup(){
     guardarropas = new Guardarropas("Ropa de entrecasa");
-    usuario = new Usuario();
+    usuario = new Usuario("test@test.com", "Buenos Aires, Argentina");
     usuario.agregarGuardarropas(guardarropas);
 
     Prenda prenda1 = new Prenda(new TipoDePrenda(Categoria.PARTE_SUPERIOR), null, new Color(0,0,0), null, null, 10, Arrays.asList(new String[]{"STORM"}));
