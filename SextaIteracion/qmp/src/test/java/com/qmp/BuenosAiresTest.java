@@ -5,7 +5,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.qmp.clima.AccuWeather;
-import com.qmp.clima.BuenosAires;
+import com.qmp.clima.Ciudad;
 import com.qmp.clima.RepositorioServicios;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -30,18 +30,18 @@ public class BuenosAiresTest {
   
   @Test
   void enBuenosAiresHace25Grados(){
-    assertEquals(25, new BuenosAires().temperaturaCelsius());
+    assertEquals(25, new Ciudad("Buenos Aires, Argentina").temperaturaCelsius());
   }
 
   @Test
   void enBuenosAiresNoVaALlover(){
-    assertEquals("0%", new BuenosAires().probabilidadDeLluvia());
+    assertEquals("0%", new Ciudad("Buenos Aires, Argentina").probabilidadDeLluvia());
   }
 
   @Test
   void elGastoFueDe5USD(){
-    new BuenosAires().probabilidadDeLluvia();
-    new BuenosAires().probabilidadDeLluvia();
+    new Ciudad("Buenos Aires, Argentina").probabilidadDeLluvia();
+    new Ciudad("Buenos Aires, Argentina").probabilidadDeLluvia();
     assertEquals(5.0, repo.getServicioActual().gastoActual());
   }
 

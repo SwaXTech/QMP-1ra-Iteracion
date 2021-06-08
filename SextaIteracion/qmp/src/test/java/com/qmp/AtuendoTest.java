@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import com.qmp.atuendo.Atuendo;
 import com.qmp.clima.AccuWeather;
-import com.qmp.clima.BuenosAires;
+import com.qmp.clima.Ciudad;
 import com.qmp.clima.RepositorioServicios;
 import com.qmp.prenda.Categoria;
 import com.qmp.prenda.Color;
@@ -35,6 +35,6 @@ public class AtuendoTest {
       new Prenda(new TipoDePrenda(Categoria.ACCESORIO), null, new Color(0,0,0), null, null, 10)
     );
 
-    assertFalse(atuendo.esSugerible(new BuenosAires()));
+    assertFalse(atuendo.esSugerible(new Ciudad("Buenos Aires, Argentina")));
   }
 }
