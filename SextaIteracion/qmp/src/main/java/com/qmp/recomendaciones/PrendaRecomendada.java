@@ -1,6 +1,4 @@
-package com.qmp;
-
-import java.util.List;
+package com.qmp.recomendaciones;
 
 import com.qmp.clima.Ciudad;
 import com.qmp.clima.CondicionClimatica;

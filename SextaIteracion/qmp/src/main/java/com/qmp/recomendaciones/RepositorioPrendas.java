@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.recomendaciones;
 
 import java.util.ArrayList;
 import java.util.List;

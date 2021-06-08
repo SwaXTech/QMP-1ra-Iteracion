@@ -33,6 +33,10 @@ public class PrendaDelDia {
   public void agregarCiudad(Ciudad ciudad){
     prendasRecomendadas.add(new PrendaRecomendada(ciudad));
   }
+
+  public LocalDate getUltimoUpdate() {
+    return ultimoUpdate;
+  }
   
   
 }

@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
-import com.qmp.clima.CondicionClimatica;
 import com.qmp.guardarropas.Guardarropas;
 import com.qmp.guardarropas.Sugerencia;
 import com.qmp.guardarropas.SugerenciaAgregar;
