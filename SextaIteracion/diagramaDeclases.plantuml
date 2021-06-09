@@ -94,7 +94,6 @@ SastreSanJuan .u.> Sastre
 SastreJohnston .u.> Sastre
 
 
-RepositorioServicios -> "*" ServicioClima
 class RepositorioServicios{
   servicios
   agregarServicio()
@@ -106,6 +105,7 @@ interface ServicioClima{
   temperatura()
   probabilidadDeLluvia()
   gastoActual()
+  alertas()
 }
 
 
@@ -114,14 +114,44 @@ class AccuWeather{
   
 }
 
-interface Ciudad{
+Ciudad -> CondicionClimatica
+class Ciudad{
+  nombreCiudad
   temperaturaCelsius()
   probabilidadDeLluvia()
+  alertasMeteorológicas()
+  condicionesClimáticas()
 }
 
-BuenosAires -> RepositorioServicios
-BuenosAires ..> Ciudad
-class BuenosAires{}
+class CondicionClimatica{
+  temperatura
+  condicionesClimaticas
+  seAdapta()
+}
+
+Alertas -> NotificationService
+Alertas -> MailSender
+class Alertas{
+  alertas
+  ciudad
+  actualizarAlertas()
+  getAlertas()
+  esEstaCiudad()
+} 
+
+class RepositorioAlertas{
+  getAlertasPara()
+}
+class RepositorioUsuarios{
+  notificarUsuarios()
+}
+interface NotificationService{
+  notify()
+}
+
+interface MailSender{
+  send()
+}
 
 Atuendo -l-> "4" Prenda
 Atuendo -> Ciudad
@@ -134,20 +164,27 @@ class Atuendo{
 }
 
 Usuario -> "*" Guardarropas
-Usuario -l-> "*" Sugerencia
+Usuario -u-> "*" Sugerencia
 class Usuario{
   guardarropas
   recibirSugerencia()
   compartirGuardarropas()
+  dejarDeRecibirMails()
+  dejarDeRecibirNotificaciones()
+  comenzarARecibirMails()
+  comenzarARecibirNotificaciones()
+  serNotificado()
+  getCiudad()
 }
 
 class Guardarropas{
-  atuendos
+  prendas
   criterio
 }
 
+Sugerencia -> Prenda
 abstract Sugerencia{
-  atuendo
+  prenda
   guardarropas
   estado
   aprobar()
@@ -168,5 +205,23 @@ enum Estado{
   PENDIENTE
 }
 
+PrendaDelDia -> PrendaRecomendada
+class PrendaDelDia{
+  prendasRecomendadas
+  ultimoUpdate
+  actualizarPrendas()
+  agregarCiudad()
+}
+class PrendaRecomendada{
+  prenda
+  ciudad
+  actualizarPrenda()
+}
+
+PrendaDelDia -d-> RepositorioPrendas
+class RepositorioPrendas{}
+RepositorioServicios -> ServicioClima
+RepositorioAlertas -u-> Alertas
+RepositorioUsuarios -u-> Usuario
 
 @enduml
