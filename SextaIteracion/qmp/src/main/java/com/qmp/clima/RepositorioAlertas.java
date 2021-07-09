@@ -2,10 +2,13 @@ package com.qmp.clima;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.qmp.RepositorioUsuarios;
 
 public class RepositorioAlertas {
 
-  private final List<Alertas> alertas = new ArrayList<>();
+  private final List<Alerta> alertas = new ArrayList<>();
   private static final RepositorioAlertas INSTANCE = new RepositorioAlertas();
 
   private RepositorioAlertas(){}
@@ -17,8 +20,14 @@ public class RepositorioAlertas {
   public List<String> getAlertasPara(String ciudad){
     return alertas.stream()
                   .filter(alerta -> alerta.esEstaCiudad(ciudad))
-                  .findAny().orElseThrow(() -> new RuntimeException("No hay alertas para esa ciudad"))
-                  .getAlertas();
+                  .map(alerta -> alerta.getAlerta())
+                  .collect(Collectors.toList());
+  }
+
+  public void setAlertas(List<Alerta> alertas){
+    alertas.clear();
+    alertas.addAll(alertas);
+    RepositorioUsuarios.getInstance().todos().forEach(usuario -> usuario.hayAlertasNuevas(alertas));
   }
   
   

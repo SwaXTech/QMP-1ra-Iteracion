@@ -3,26 +3,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.qmp.clima.Alerta;
 import com.qmp.guardarropas.Guardarropas;
 import com.qmp.guardarropas.Sugerencia;
-import com.qmp.otros_servicios.MailSender;
-import com.qmp.otros_servicios.NotificationService;
+import com.qmp.otros_servicios.Notificador;
 
 public class Usuario {
   private List<Guardarropas> misGuardarropas;
   private List<Sugerencia> sugerencias;
-
-  private boolean recibirNotificaciones = true;
-  private boolean recibirMail = true;
+  private List<Notificacion> interesadosDeAlertas;
   
   private String email;
   private String ciudad;
+  private Sugerencia sugerenciaDiaria;
 
   public Usuario(String email, String ciudad) {
     this.misGuardarropas = new ArrayList<>();
     this.sugerencias = new ArrayList<>();
+    this.interesadosDeAlertas = new ArrayList<>();
     this.email = email;
     this.ciudad = ciudad;
+    this.sugerenciaDiaria = null;
   }
 
   public void agregarGuardarropas(Guardarropas guardarropas){
@@ -49,32 +50,20 @@ public class Usuario {
     return ciudad;
   }
 
-  public void dejarDeRecibirMails(){
-    recibirMail = false;
+  public void activarNotificaciones(TipoAlerta tipoAlerta, Notificador notificador){
+    interesadosDeAlertas.add(new Notificacion(this, tipoAlerta, notificador));
   }
 
-
-  public void dejarDeRecibirNotificaciones(){
-    recibirNotificaciones = false;
+  public void hayAlertasNuevas(List<Alerta> alertas) {
+    interesadosDeAlertas.forEach(notificador -> notificador.notificar(alertas));
   }
 
-  public void comenzarARecibirMails(){
-    recibirMail = true;
+  public void actualizarSugerenciaDiaria(){
+    this.sugerenciaDiaria = this.sugerir();
   }
 
-  public void comenzarARecibirNotificaciones(){
-    recibirNotificaciones = true;
+  public Sugerencia sugerir(){
+    return null;
   }
-
-  public void serNotificado(NotificationService notiService, MailSender sender, String mensaje){
-    if(recibirNotificaciones){
-      notiService.notify(mensaje);
-    }
-
-    if(recibirMail){
-      sender.send(email, mensaje);
-    }
-  }
-
   
 }

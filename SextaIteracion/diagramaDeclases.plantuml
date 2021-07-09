@@ -129,9 +129,7 @@ class CondicionClimatica{
   seAdapta()
 }
 
-Alertas -> NotificationService
-Alertas -> MailSender
-class Alertas{
+class Alerta{
   alertas
   ciudad
   actualizarAlertas()
@@ -141,17 +139,12 @@ class Alertas{
 
 class RepositorioAlertas{
   getAlertasPara()
-}
-class RepositorioUsuarios{
-  notificarUsuarios()
-}
-interface NotificationService{
-  notify()
+  setAlertas()
 }
 
-interface MailSender{
-  send()
+class RepositorioUsuarios{
 }
+
 
 Atuendo -l-> "4" Prenda
 Atuendo -> Ciudad
@@ -169,12 +162,10 @@ class Usuario{
   guardarropas
   recibirSugerencia()
   compartirGuardarropas()
-  dejarDeRecibirMails()
-  dejarDeRecibirNotificaciones()
-  comenzarARecibirMails()
-  comenzarARecibirNotificaciones()
-  serNotificado()
   getCiudad()
+  activarNotificaciones()
+  hayAlertasNuevas()
+  actualizarSugerenciaDiaria()
 }
 
 class Guardarropas{
@@ -221,7 +212,7 @@ class PrendaRecomendada{
 PrendaDelDia -d-> RepositorioPrendas
 class RepositorioPrendas{}
 RepositorioServicios -> ServicioClima
-RepositorioAlertas -u-> Alertas
+RepositorioAlertas -u-> Alerta
 RepositorioUsuarios -u-> Usuario
 
 @enduml
