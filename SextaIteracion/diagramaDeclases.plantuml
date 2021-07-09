@@ -94,13 +94,6 @@ SastreSanJuan .u.> Sastre
 SastreJohnston .u.> Sastre
 
 
-class RepositorioServicios{
-  servicios
-  agregarServicio()
-  removerServicio()
-  servicioActual()
-}
-
 interface ServicioClima{
   temperatura()
   probabilidadDeLluvia()
@@ -114,20 +107,6 @@ class AccuWeather{
   
 }
 
-Ciudad -> CondicionClimatica
-class Ciudad{
-  nombreCiudad
-  temperaturaCelsius()
-  probabilidadDeLluvia()
-  alertasMeteorológicas()
-  condicionesClimáticas()
-}
-
-class CondicionClimatica{
-  temperatura
-  condicionesClimaticas
-  seAdapta()
-}
 
 class Alerta{
   alertas
@@ -196,23 +175,29 @@ enum Estado{
   PENDIENTE
 }
 
-PrendaDelDia -> PrendaRecomendada
-class PrendaDelDia{
-  prendasRecomendadas
-  ultimoUpdate
-  actualizarPrendas()
-  agregarCiudad()
-}
-class PrendaRecomendada{
-  prenda
-  ciudad
-  actualizarPrenda()
-}
-
-PrendaDelDia -d-> RepositorioPrendas
-class RepositorioPrendas{}
-RepositorioServicios -> ServicioClima
 RepositorioAlertas -u-> Alerta
 RepositorioUsuarios -u-> Usuario
+
+interface Notificador{
+  notificar()
+}
+
+NotificadorMail .u.> Notificador
+class NotificadorMail {}
+
+
+NotificadorSugerencia .u.> Notificador
+class NotificadorSugerencia {}
+
+
+NotificadorApp .u.> Notificador
+class NotificadorApp {}
+
+TareaSugerenciaDiaria ..> RepositorioUsuarios
+class TareaSugerenciaDiaria{
+  enviarSugerenciaDiaria()
+}
+
+Usuario --> "*" Notificador
 
 @enduml
